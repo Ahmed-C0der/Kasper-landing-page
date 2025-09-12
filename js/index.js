@@ -195,11 +195,15 @@ spans.forEach(span => {
 const portfolioBoxes = Array.from(document.querySelectorAll(".portfolio .image-container > div"));
 const portfolioLinks = Array.from(document.querySelectorAll(".protfolio-links li"));
 const showMoreBtn = document.querySelector(".portfolio .more");
-showMoreBtn.addEventListener("click", showAndHidefunction)
+let currentIndexOfBoxes = "all";
 portfolioLinks.forEach((e) => {
     e.addEventListener("click", () => {
         portfolioLinks.forEach((e) => e.classList.remove("active"))
         e.classList.add("active")
+        currentIndexOfBoxes = e.dataset.kind
+      
+
+        
 
         portfolioBoxes.forEach((el, index) => {
             if (e.dataset.kind === "all") {
@@ -225,13 +229,20 @@ portfolioLinks.forEach((e) => {
 })
 function showAndHidefunction(e) {
     e.preventDefault()
-    portfolioBoxes.forEach((box, index) => {
+    if (currentIndexOfBoxes === "all") {
+      portfolioBoxes.forEach((box, index) => {
         if (index >= 8) {
             box.classList.toggle("hidden");
         }
     });
+    }
+    else {
+      console.log(currentIndexOfBoxes)
+    }
+    
 }
 
+showMoreBtn.addEventListener("click", showAndHidefunction)
 
 // end portfolio
 
