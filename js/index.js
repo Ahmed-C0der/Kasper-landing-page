@@ -195,7 +195,7 @@ spans.forEach(span => {
 const portfolioBoxes = Array.from(document.querySelectorAll(".portfolio .image-container > div"));
 const portfolioLinks = Array.from(document.querySelectorAll(".protfolio-links li"));
 const showMoreBtn = document.querySelector(".portfolio .more");
-
+showMoreBtn.addEventListener("click", showAndHidefunction)
 portfolioLinks.forEach((e) => {
     e.addEventListener("click", () => {
         portfolioLinks.forEach((e) => e.classList.remove("active"))
@@ -207,7 +207,7 @@ portfolioLinks.forEach((e) => {
                 showMoreBtn.addEventListener("click", showAndHidefunction)
 
                 return
-            }
+              }
             else {
                 el.style.display = "none"
                 if (el.dataset.kind === e.dataset.kind) {
