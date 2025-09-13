@@ -24,7 +24,7 @@
 html {
   scroll-behavior: smooth;
   scrollbar-color: var(--min-color) #000000b3;
-
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -845,6 +845,8 @@ header .container .nav ul.show {
   }
   
 }
+
+
 /* start skills */
 
 .our-skill .container .skills {
